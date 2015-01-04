@@ -44,6 +44,7 @@ for submission in multi_reddits.get_hot(limit=20):
                 if "Pizza" in comment.body and comment.id not in already_done:
                         #edit the "yum" line to anything you want it to reply with.
                         comment.reply('Yum!')
+                        already_done.add(submission.id)
                         already_done.add(comment.id)
             except AttributeError:
                 pass
